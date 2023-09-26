@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+# Deployment object
+kind: Deployment
+metadata:
+  # The name of the Deployment
+  name: mysqldb
+spec:
+  # Replicas for this Deployment
+  replicas: 3
+  selector:
+    # labels the pods
+    matchLabels:
+      app: mysqldb
+  template:
+    metadata:
+      labels:
+        # The label the pods created from the pod template should have
+        app: mysqldb
+    spec:
+      containers:
+        # The container name to execute pods
+        - name: mysqldb
+          # pull postgresimage from docker hub
+          image: mysql
+          readinessProbe:
+            httpGet:
+              path: /ready
+              port: 80
+              successThreshold: 3
+          ports:
+            # Assign ports to expose container
+            - containerPort: 3306
+          envFrom:
+            # Load the environment variables/PostgresSQL credentials
+            - configMapRef:
+                # This should be the ConfigMap name created ealier
+                name: mysql-secret-credentials
+          volumeMounts:
+            # The volume mounts  for the container
+            - mountPath: /var/lib/mysqldb/data
+              name: db-data
+      # Volumes attached to the pod
+      volumes:
+        - name: db-data
+          persistentVolumeClaim:
+            # reference the PersistentVolumeClaim
+            claimName: mysql-pvc

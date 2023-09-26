@@ -1,0 +1,15 @@
+apiVersion: v1
+# Kind for kubernets ConfigMap
+kind: ConfigMap
+metadata:
+  # Name your ConfigMap
+  name: mysql-secret-credentials
+  labels:
+    app: mysqldb
+data:
+  # User DB
+  MYSQL_DB: testDB
+    # Db user
+  MYSQL_USER: testUser
+  # Db password
+  MYSQL_ROOT_PASSWORD: testPassword
