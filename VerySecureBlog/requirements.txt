@@ -1,0 +1,6 @@
+flask
+Flask-SQLAlchemy
+flask-login
+flask-scrypt
+flask-SQLAlchemy
+Flask-Session

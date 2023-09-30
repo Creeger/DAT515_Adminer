@@ -1,0 +1,63 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %}
+
+{% block body %}
+
+<section class="vh-100 bg-image" style="background-image: url(../static/signup_bg.jpg);">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+  <div class="container px-5 my-5">
+    <form id="contactForm" method="POST">
+      
+        <div class="form-floating mb-3">
+          <input class="form-control" id="username" name="username" type="text" placeholder="username" data-sb-validations="required" />
+          <label for="username">Username</label>
+          <div class="invalid-feedback" data-sb-feedback="username:required">First name is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="first_name" name="first_name" type="text" placeholder="First name" data-sb-validations="required" />
+            <label for="first_name">First name</label>
+            <div class="invalid-feedback" data-sb-feedback="first_name:required">First name is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="last_name" name="last_name" type="text" placeholder="Last name" data-sb-validations="required" />
+            <label for="last_name">Last name</label>
+            <div class="invalid-feedback" data-sb-feedback="last_name:required">Last name is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="email" type="email" name="email" placeholder="Email address" data-sb-validations="required,email" />
+            <label for="email">Email Address</label>
+            <div class="invalid-feedback" data-sb-feedback="email:required">Email Address is required.</div>
+            <div class="invalid-feedback" data-sb-feedback="email:email">Email Address Email is not valid.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="password" type="password" name="password" placeholder="Password" data-sb-validations="required" />
+            <label for="password">Password</label>
+            <div class="invalid-feedback" data-sb-feedback="password:required">Password is required.</div>
+        </div>
+        <div class="form-floating mb-3">
+            <input class="form-control" id="password_confirm" name="password_confirm" type="password" placeholder="Confirm password" data-sb-validations="required" />
+            <label for="password_confirm">Confirm password</label>
+            <div class="invalid-feedback" data-sb-feedback="password_confirm:required">Confirm password is required.</div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button name="submit" type="submit" class="btn btn-primary" style="width: 100%;">Create user</button>
+        </div>
+    </form>
+</div>
+<script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+{% endblock %}
+
