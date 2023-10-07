@@ -14,30 +14,16 @@ services:
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
 
-  #mysql_db:
-  #  build:
-  #    context: ./db
-  #  restart: always
-  #  environment:
-  #    MYSQL_ROOT_PASSWORD: root
-  #  ports:
-  #    - 3336:3306
-  #  volumes:
-  #    - ./data:/var/lib/mysql
-
   adminer:
     image: adminer
     restart: always
     depends_on:
       - postgres_db
-      - mysql_db
     ports:
       - 8080:8080
 
   blog:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: jesper14/blog:v1
     restart: always
     depends_on:
       - postgres_db
