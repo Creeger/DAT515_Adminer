@@ -5,9 +5,9 @@ metadata:
   labels:
     app: adminer
 spec:
-  type: LoadBalancer
+  type: NodePort
   selector:
     app: adminer
   ports:
-    - port: 80
+    - port: 8080
       targetPort: 8080
