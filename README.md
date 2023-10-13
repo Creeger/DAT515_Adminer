@@ -1,4 +1,4 @@
-# DAT515_Adminer
+# DAT515_Project
 
 - blog directory contains code used to dockerise the application.
 - AWS directory contains kubernetes extensions and was used when deploying in AWS.
